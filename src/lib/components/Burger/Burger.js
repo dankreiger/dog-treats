@@ -26,13 +26,13 @@ const Burger = ({ burgerColor, burgerWidth, onClick }) => {
 Burger.propTypes = {
   burgerWidth: PropTypes.string,
   burgerColor: PropTypes.string,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 Burger.defaultProps = {
   burgerWidth: '28px',
   burgerColor: '#000',
-  onClick: () => {}
+  onClick: () => {},
 };
 
 export default Burger;

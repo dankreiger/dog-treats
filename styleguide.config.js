@@ -6,11 +6,11 @@ module.exports = {
   title: `${pkg.name} v${pkg.version}`,
   components: 'src/lib/components/**/[A-Z]*.js',
   moduleAliases: {
-    [pkg.name]: path.resolve(__dirname, 'src/lib')
+    [pkg.name]: path.resolve(__dirname, 'src/lib'),
   },
   ribbon: {
     url: 'https://github.com/dankreiger/dog-treats',
-    text: 'Fork me on GitHub'
+    text: 'Fork me on GitHub',
   },
   showSidebar: true,
   usageMode: 'expand',
@@ -18,9 +18,9 @@ module.exports = {
   theme: {
     color: {
       link: '#065fd4',
-      linkHover: '#00adef'
+      linkHover: '#00adef',
     },
-    font: ['Helvetica', 'sans-serif']
+    font: ['Helvetica', 'sans-serif'],
   },
   styles: {
     Ribbon: {
@@ -29,28 +29,28 @@ module.exports = {
           'url("https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")',
         backgroundSize: '50px 50px',
         backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'right top'
+        backgroundPosition: 'right top',
       },
       link: {
-        backgroundColor: '#065fd4'
-      }
+        backgroundColor: '#065fd4',
+      },
     },
     Heading: {
       heading2: {
-        fontSize: 26
-      }
+        fontSize: 26,
+      },
     },
     ReactComponent: {
       root: {
-        marginBottom: 20
+        marginBottom: 20,
       },
       header: {
-        marginBottom: 0
+        marginBottom: 0,
       },
       tabs: {
-        marginBottom: 0
-      }
-    }
+        marginBottom: 0,
+      },
+    },
   },
   webpackConfig,
   getExampleFilename(componentPath) {
@@ -60,5 +60,5 @@ module.exports = {
     const name = path.basename(componentPath, '.js');
 
     return `import { ${name} } from '${pkg.name}';`;
-  }
+  },
 };

@@ -11,7 +11,7 @@ import {
   HeaderLogoSt,
   HeaderItemsSt,
   HeaderItemSt,
-  MobileHeaderItemSt
+  MobileHeaderItemSt,
 } from './Header.styles';
 import Burger from '../Burger';
 
@@ -28,7 +28,7 @@ const Header = ({
   burgerMenu,
   mobileMenuBackgroundColor,
   headerFixedTop,
-  isDemo
+  isDemo,
 }) => {
   const itemKeys = [];
   useMemo(() => {
@@ -107,7 +107,7 @@ Header.propTypes = {
   mobileMenuBackgroundColor: PropTypes.string,
   headerFixedTop: PropTypes.bool,
   /** for playground only (to fit container) */
-  isDemo: PropTypes.bool
+  isDemo: PropTypes.bool,
 };
 
 Header.defaultProps = {
@@ -115,7 +115,7 @@ Header.defaultProps = {
   items: [
     <DefaultItem key="item-0" text="item 1" />,
     <DefaultItem key="item-1" text="item 2" />,
-    <DefaultItem key="item-2" text="item 3" />
+    <DefaultItem key="item-2" text="item 3" />,
   ],
   desktopMenuMinWidth: 760,
   backgroundColor: '#fff',
@@ -127,7 +127,7 @@ Header.defaultProps = {
   burgerMenu: null,
   mobileMenuBackgroundColor: '#ddd',
   headerFixedTop: false,
-  isDemo: false
+  isDemo: false,
 };
 
 export default Header;

@@ -7,5 +7,5 @@ export const DefaultLogo = () => <div style={defaultLogoStyles}>Some Logo</div>;
 export const DefaultItem = ({ text }) => <div>{text}</div>;
 
 DefaultItem.propTypes = {
-  text: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired
+  text: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
