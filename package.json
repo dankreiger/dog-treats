@@ -29,7 +29,7 @@
     "start": "NODE_ENV=development BABEL_ENV=development styleguidist server --open",
     "styleguide:build": "NODE_ENV=production BABEL_ENV=production styleguidist build",
     "test": "jest",
-    "test:coverage": "jest --coverage --forceExit --colors"
+    "test:coverage": "jest --coverage --forceExit --colors --detectOpenHandles"
   },
   "husky": {
     "hooks": {
@@ -39,8 +39,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,tsx,jsx,json,css}": [
-      "prettier --single-quote --write",
-      "git add"
+      "prettier --single-quote --write"
     ]
   },
   "babel": {
