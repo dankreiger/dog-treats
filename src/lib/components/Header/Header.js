@@ -7,6 +7,7 @@ import {
   HeaderMobileMenuWrapperSt,
   HeaderMobileOverlaySt,
   HeaderMobileMenuSt,
+  HeaderBurgerWrapperSt,
   HeaderDesktopItemsWrapperSt,
   HeaderLogoSt,
   HeaderItemsSt,
@@ -28,7 +29,6 @@ const Header = ({
   burgerMenu,
   mobileMenuBackgroundColor,
   headerFixedTop,
-  isDemo,
 }) => {
   const itemKeys = [];
   useMemo(() => {
@@ -56,7 +56,6 @@ const Header = ({
         mobileWrapperPadding={mobileWrapperPadding}
         wrapperHeight={wrapperHeight}
         wrapperPadding={wrapperPadding}
-        isDemo={isDemo}
       >
         <HeaderMobileMenuWrapperSt>
           <HeaderMobileOverlaySt
@@ -75,7 +74,13 @@ const Header = ({
             ))}
           </HeaderMobileMenuSt>
           {burgerMenu || (
-            <Burger onClick={handleToggleMobileMenu} burgerColor={color} />
+            <HeaderBurgerWrapperSt>
+              <Burger
+                onClick={handleToggleMobileMenu}
+                burgerColor={color}
+                openStateFromOutside={mobileMenuToggled}
+              />
+            </HeaderBurgerWrapperSt>
           )}
         </HeaderMobileMenuWrapperSt>
 
@@ -106,8 +111,6 @@ Header.propTypes = {
   burgerMenu: PropTypes.node,
   mobileMenuBackgroundColor: PropTypes.string,
   headerFixedTop: PropTypes.bool,
-  /** for playground only (to fit container) */
-  isDemo: PropTypes.bool,
 };
 
 Header.defaultProps = {
@@ -127,7 +130,6 @@ Header.defaultProps = {
   burgerMenu: null,
   mobileMenuBackgroundColor: '#ddd',
   headerFixedTop: false,
-  isDemo: false,
 };
 
 export default Header;

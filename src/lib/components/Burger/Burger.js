@@ -1,9 +1,20 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { BurgerWrapperSt, TopBunSt, BottomBunSt } from './Burger.styles';
 
-const Burger = ({ burgerColor, burgerWidth, onClick }) => {
+const Burger = ({
+  burgerColor,
+  burgerWidth,
+  openStateFromOutside,
+  onClick,
+}) => {
   const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    if (!openStateFromOutside) {
+      setActive(false);
+    }
+  }, [openStateFromOutside]);
 
   const handleOnClick = useCallback(() => {
     setActive(!active);
@@ -27,12 +38,14 @@ Burger.propTypes = {
   burgerWidth: PropTypes.string,
   burgerColor: PropTypes.string,
   onClick: PropTypes.func,
+  openStateFromOutside: PropTypes.bool,
 };
 
 Burger.defaultProps = {
   burgerWidth: '28px',
   burgerColor: '#000',
   onClick: () => {},
+  openStateFromOutside: false,
 };
 
 export default Burger;

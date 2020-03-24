@@ -12,7 +12,6 @@ export const HeaderDesktopItemsWrapperSt = styled.div``;
 export const HeaderWrapperSt = styled.header`
   display: flex;
   align-items: center;
-  width: ${({ isDemo }) => (isDemo ? 'auto' : '100%')};
   position: ${({ headerFixedTop }) => (headerFixedTop ? 'fixed' : 'sticky')};
   top: 0;
   left: 0;
@@ -40,6 +39,10 @@ export const HeaderWrapperSt = styled.header`
         }
       }
     `}
+`;
+
+export const HeaderBurgerWrapperSt = styled.div`
+  z-index: 1;
 `;
 
 export const HeaderMobileOverlaySt = styled.div`

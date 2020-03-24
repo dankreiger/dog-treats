@@ -8,6 +8,7 @@ export const BurgerWrapperSt = styled.div`
   position: relative;
   cursor: pointer;
   width: ${({ burgerWidth }) => burgerWidth};
+
   height: 28px;
   > div {
     position: absolute;

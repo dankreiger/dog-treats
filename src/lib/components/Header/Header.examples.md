@@ -13,7 +13,7 @@ import { Header } from 'dog-treats';
     overflowY: 'scroll'
   }}
 >
-  <Header isDemo />
+  <Header />
   <div style={{ height: '1000px', padding: '20px', fontSize: '16px' }}>
     {'lorem puppy '.repeat(1000)}
   </div>
